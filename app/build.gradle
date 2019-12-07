@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -25,11 +27,50 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
     implementation "androidx.core:core-ktx:$rootProject.core_ktx"
+
+    // android
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "com.google.android.material:material:$rootProject.material"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
+
+    // dependency injection
+    implementation "org.koin:koin-android-viewmodel:$rootProject.koin"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+
+    // room
+    implementation "androidx.room:room-runtime:$rootProject.room"
+    implementation "androidx.room:room-ktx:$rootProject.room"
+    kapt "androidx.room:room-compiler:$rootProject.room"
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+
+    // life cycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.viewModel"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.viewModel"
+
+    // unit test
     testImplementation "junit:junit:$rootProject.junit"
+    testImplementation "io.mockk:mockk:$rootProject.mockk"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.coreTesting"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines"
+    testImplementation "org.robolectric:robolectric:$rootProject.roboelectric"
+    testImplementation "androidx.room:room-testing:$rootProject.room"
+    testImplementation "org.koin:koin-test:$rootProject.koin"
+
+
+    // instrumented test
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidx_test"
+    androidTestImplementation "androidx.test:core:$rootProject.testCore"
+    androidTestImplementation "androidx.test:runner:$rootProject.testRunner"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espresso_core"
+    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$rootProject.espresso_core"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espresso_core"
 }
