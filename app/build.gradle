@@ -36,9 +36,12 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.material"
     implementation "androidx.recyclerview:recyclerview:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
-
+    implementation "androidx.paging:paging-runtime:$rootProject.paging"
     // lottie
     implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
+
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$rootProject.picasso"
 
     // dependency injection
     implementation "org.koin:koin-android-viewmodel:$rootProject.koin"
