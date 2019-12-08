@@ -37,6 +37,9 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
 
+    // lottie
+    implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
+
     // dependency injection
     implementation "org.koin:koin-android-viewmodel:$rootProject.koin"
 

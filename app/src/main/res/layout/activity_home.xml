@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:id="@+id/welcome_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Bem vindo ao Grupo ZAP!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textAndIconColor"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/portals_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Escolha um dos nossos portais:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/textAndIconColor"
+        app:layout_constraintLeft_toLeftOf="@id/welcome_textView"
+        app:layout_constraintRight_toRightOf="@id/welcome_textView"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_textView" />
+
+    <ImageButton
+        android:id="@+id/logoZap_imageView"
+        style="@android:style/Widget.Material.ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/home_guideline_vertical"
+        app:layout_constraintRight_toRightOf="@id/home_guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/home_guideline_horizontal"
+        app:srcCompat="@drawable/logotipo_novo_zap" />
+
+    <ImageButton
+        android:id="@+id/logoVivaReal_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/home_guideline_vertical"
+        app:layout_constraintRight_toRightOf="@id/home_guideline_vertical"
+        app:layout_constraintTop_toBottomOf="@id/logoZap_imageView"
+        app:srcCompat="@drawable/logo_vivareal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_guideline_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
