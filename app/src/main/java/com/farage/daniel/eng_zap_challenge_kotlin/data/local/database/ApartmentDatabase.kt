@@ -1,9 +1,9 @@
-package com.farage.daniel.eng_zap_challenge_kotlin.data.local.Database
+package com.farage.daniel.eng_zap_challenge_kotlin.data.local.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.farage.daniel.eng_zap_challenge_kotlin.data.local.Dao.ApartmentDao
+import com.farage.daniel.eng_zap_challenge_kotlin.data.local.dao.ApartmentDao
 import com.farage.daniel.eng_zap_challenge_kotlin.data.model.entities.ApartmentEntity
 import com.farage.daniel.eng_zap_challenge_kotlin.domain.utils.Converters
 
