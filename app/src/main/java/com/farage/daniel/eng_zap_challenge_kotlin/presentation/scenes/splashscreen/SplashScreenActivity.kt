@@ -1,14 +1,12 @@
-package com.farage.daniel.eng_zap_challenge_kotlin.presentation.scenes.SplashScreen
+package com.farage.daniel.eng_zap_challenge_kotlin.presentation.scenes.splashscreen
 
 import android.animation.Animator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.animation.Animation
 import com.airbnb.lottie.LottieAnimationView
 import com.farage.daniel.eng_zap_challenge_kotlin.R
-import com.farage.daniel.eng_zap_challenge_kotlin.presentation.scenes.HomeActivity.HomeActivity
+import com.farage.daniel.eng_zap_challenge_kotlin.presentation.scenes.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {

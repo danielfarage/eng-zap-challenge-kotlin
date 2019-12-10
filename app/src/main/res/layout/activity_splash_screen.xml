@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.scenes.SplashScreen.SplashScreenActivity">
+    tools:context=".presentation.scenes.splashscreen.SplashScreenActivity">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/homeAnimationView"

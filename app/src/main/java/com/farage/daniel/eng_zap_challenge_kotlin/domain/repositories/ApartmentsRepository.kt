@@ -10,6 +10,8 @@ interface ApartmentsRepository {
 
     suspend fun saveAllApartments(apartmentList: List<ApartmentEntity>) : List<Long>
 
-    suspend fun retriveAllApartments() : DataSource.Factory<Int, ApartmentEntity>
+    fun retriveAllApartmentsForZap() : DataSource.Factory<Int, ApartmentEntity>
+
+    fun retriveAllApartmentsForVivaReal() : DataSource.Factory<Int, ApartmentEntity>
 
 }

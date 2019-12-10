@@ -36,7 +36,7 @@ dependencies {
     implementation "com.google.android.material:material:$rootProject.material"
     implementation "androidx.recyclerview:recyclerview:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout"
-    implementation "androidx.paging:paging-runtime:$rootProject.paging"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.paging"
     // lottie
     implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
 

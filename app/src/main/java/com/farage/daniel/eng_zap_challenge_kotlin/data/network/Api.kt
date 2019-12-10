@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface Api {
 
-    @GET("sources/source-1.js")
+    @GET("sources/source-1.json")
     suspend fun getAllApartments() : List<ApartmentResponse>
 
 }

@@ -4,6 +4,7 @@
     package="com.farage.daniel.eng_zap_challenge_kotlin">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:usesCleartextTraffic="true"
         android:name=".base.AppBase"
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -14,14 +15,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".presentation.scenes.SplashScreen.SplashScreenActivity">
+        <activity android:name=".presentation.scenes.splashscreen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.scenes.HomeActivity.HomeActivity"/>
+        <activity android:name=".presentation.scenes.home.HomeActivity"/>
+        <activity android:name=".presentation.scenes.apartmentspannel.ApartmentsPannelActivity"/>
 
     </application>
 
