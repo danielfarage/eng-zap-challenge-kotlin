@@ -32,7 +32,7 @@ data class Location(
 data class PricingInfos(
 
     val yearlyIptu: Int,
-    val price: Int,
+    val price: String,
     val businessType: String,
     val monthlyCondoFee: Int
 )

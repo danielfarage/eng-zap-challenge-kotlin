@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.farage.daniel.eng_zap_challenge_kotlin.R
 import com.farage.daniel.eng_zap_challenge_kotlin.domain.utils.Constants.COMPANY_KEY
 import com.farage.daniel.eng_zap_challenge_kotlin.presentation.common.CompanyHolder
+import com.farage.daniel.eng_zap_challenge_kotlin.presentation.scenes.apartmentdetails.ApartmentDetailsFragment
 import kotlinx.android.synthetic.main.activity_apartments_pannel.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -15,7 +16,9 @@ class ApartmentsPannelActivity: AppCompatActivity() {
 
     private lateinit var companyHolder: CompanyHolder
     private val apartmentsViewModel: ApartmentsPannelViewModel by viewModel()
-    private val apartmentsAdapter = ApartmentsAdapter()
+    private val apartmentsAdapter = ApartmentsAdapter {
+        ApartmentDetailsFragment(it).show(supportFragmentManager, "DetailsFragment")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

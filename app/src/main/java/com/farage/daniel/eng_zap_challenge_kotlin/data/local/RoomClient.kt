@@ -6,9 +6,10 @@ import com.farage.daniel.eng_zap_challenge_kotlin.data.local.database.ApartmentD
 
 class RoomClient(val context: Context) {
     val setupApartmentDatabase: ApartmentDatabase by lazy {
-        Room.inMemoryDatabaseBuilder(
+        Room.databaseBuilder(
             context,
-            ApartmentDatabase::class.java
+            ApartmentDatabase::class.java,
+            "ApartmentDatabase"
         ).build()
     }
 }

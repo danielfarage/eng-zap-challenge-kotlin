@@ -8,22 +8,16 @@ import androidx.paging.PagedList
 import com.farage.daniel.eng_zap_challenge_kotlin.data.model.entities.ApartmentEntity
 import com.farage.daniel.eng_zap_challenge_kotlin.domain.usecases.RetriveAllApartmentsPagedUseCase
 import com.farage.daniel.eng_zap_challenge_kotlin.presentation.common.CompanyHolder
+import com.farage.daniel.eng_zap_challenge_kotlin.presentation.model.Apartment
 import kotlinx.coroutines.*
 
 class ApartmentsPannelViewModel(
     private val retriveAllApartmentsPagedUseCase: RetriveAllApartmentsPagedUseCase
 ) : ViewModel() {
 
-    /*var allApartmentsPagedList: LiveData<PagedList<ApartmentEntity>> = viewModelScope.async {
-        retriveAllApartmentsPagedUseCase.launch(companyHolder)
-    }.getCompleted()*/
 
-    fun retriveAllApartments(companyHolder: CompanyHolder): LiveData<PagedList<ApartmentEntity>> {
+    fun retriveAllApartments(companyHolder: CompanyHolder): LiveData<PagedList<Apartment>> {
         return retriveAllApartmentsPagedUseCase.launch(companyHolder)
     }
-
-
-
-
 
 }

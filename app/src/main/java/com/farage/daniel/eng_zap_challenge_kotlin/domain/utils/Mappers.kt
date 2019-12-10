@@ -38,7 +38,7 @@ fun ApartmentResponse.toPresenter() : Apartment {
         this.bedrooms,
         PresenterPricingInfos(
             this.pricingInfos.yearlyIptu,
-            this.pricingInfos.price,
+            this.pricingInfos.price.toMoney(),
             this.pricingInfos.businessType,
             this.pricingInfos.monthlyCondoFee
         )
@@ -104,8 +104,12 @@ fun ApartmentEntity.toPresenter() : Apartment {
         this.bedrooms,
         PresenterPricingInfos(
             this.pricingInfos.yearlyIptu,
-            this.pricingInfos.price,
-            this.pricingInfos.businessType,
+            this.pricingInfos.price.toMoney(),
+            when(this.pricingInfos.businessType){
+                "SALE" -> "Venda"
+                "RENTAL" -> "Aluguel"
+                else -> "Não informado"
+            },
             this.pricingInfos.monthlyCondoFee
         )
     )

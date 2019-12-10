@@ -13,7 +13,7 @@ interface ApartmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun createAll(apartmentList: List<ApartmentEntity>) : List<Long>
 
-    @Query("SELECT * FROM ApartmentEntity")
+    @Query("SELECT * FROM ApartmentEntity WHERE (businessType = \"RENTAL\")")
     fun getAllApartmentPagedForZap() : DataSource.Factory<Int, ApartmentEntity>
 
     @Query("SELECT * FROM ApartmentEntity")
