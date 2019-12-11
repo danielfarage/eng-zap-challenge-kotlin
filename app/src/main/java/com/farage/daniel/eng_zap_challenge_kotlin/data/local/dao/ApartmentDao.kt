@@ -18,7 +18,7 @@ interface ApartmentDao {
     @Query("SELECT * FROM ApartmentEntity WHERE enableFor = :company AND lat <> 0 AND lon <> 0 AND usableAreas > 0 ")
     fun getAllApartmentPagedForZap(company: String) : DataSource.Factory<Int, ApartmentEntity>
 
-    @Query("SELECT * FROM ApartmentEntity WHERE enableFor = :company AND lat <> 0 AND lon <> 0")
+    @Query("SELECT * FROM ApartmentEntity WHERE enableFor = :company AND lat <> 0 AND lon <> 0 AND usableAreas > 0 ")
     fun getAllApartmentPagedForVivaReal(company: String) : DataSource.Factory<Int, ApartmentEntity>
 
     @Query("SELECT * FROM ApartmentEntity WHERE id = :id")
