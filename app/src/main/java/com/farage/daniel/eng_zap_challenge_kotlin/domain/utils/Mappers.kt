@@ -38,7 +38,8 @@ fun ApartmentResponse.toPresenter() : Apartment {
         this.bedrooms,
         PresenterPricingInfos(
             this.pricingInfos.yearlyIptu,
-            this.pricingInfos.price.toMoney(),
+            this.pricingInfos.price,
+            this.pricingInfos.rentalTotalPrice,
             this.pricingInfos.businessType,
             this.pricingInfos.monthlyCondoFee
         )
@@ -48,6 +49,7 @@ fun ApartmentResponse.toPresenter() : Apartment {
 fun ApartmentResponse.toEntity() : ApartmentEntity {
     return ApartmentEntity(
         this.id,
+        "",
         this.usableAreas,
         this.listingType,
         this.createdAt,
@@ -72,6 +74,7 @@ fun ApartmentResponse.toEntity() : ApartmentEntity {
         EntityPricingInfos(
             this.pricingInfos.yearlyIptu,
             this.pricingInfos.price,
+            this.pricingInfos.rentalTotalPrice,
             this.pricingInfos.businessType,
             this.pricingInfos.monthlyCondoFee
         )
@@ -104,7 +107,8 @@ fun ApartmentEntity.toPresenter() : Apartment {
         this.bedrooms,
         PresenterPricingInfos(
             this.pricingInfos.yearlyIptu,
-            this.pricingInfos.price.toMoney(),
+            this.pricingInfos.price,
+            this.pricingInfos.rentalTotalPrice,
             when(this.pricingInfos.businessType){
                 "SALE" -> "Venda"
                 "RENTAL" -> "Aluguel"

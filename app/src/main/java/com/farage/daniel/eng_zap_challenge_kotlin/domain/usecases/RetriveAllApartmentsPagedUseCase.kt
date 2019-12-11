@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import androidx.paging.PagedList.Config.MAX_SIZE_UNBOUNDED
 import androidx.paging.toLiveData
 import com.farage.daniel.eng_zap_challenge_kotlin.data.model.entities.ApartmentEntity
 import com.farage.daniel.eng_zap_challenge_kotlin.domain.repositories.ApartmentsRepository
@@ -22,10 +23,15 @@ class RetriveAllApartmentsPagedUseCase(private val apartmentsRepository: Apartme
                 CompanyHolder.ZAP -> apartmentsRepository.retriveAllApartmentsForZap()
             }
 
-
+        val pagedConfig = PagedList.Config.Builder().apply {
+            setEnablePlaceholders(true)
+            setPageSize(20)
+            setInitialLoadSizeHint(20)
+            setPrefetchDistance(20)
+        }.build()
         return resultApartmentsList
             .map { it.toPresenter() }
-            .toLiveData(pageSize = 20, initialLoadKey = 10)
+            .toLiveData(pagedConfig)
     }
 
 }

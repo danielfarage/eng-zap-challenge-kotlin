@@ -6,6 +6,8 @@ import com.farage.daniel.eng_zap_challenge_kotlin.data.model.entities.ApartmentE
 import com.farage.daniel.eng_zap_challenge_kotlin.data.model.responses.ApartmentResponse
 import com.farage.daniel.eng_zap_challenge_kotlin.data.network.Api
 import com.farage.daniel.eng_zap_challenge_kotlin.domain.repositories.ApartmentsRepository
+import com.farage.daniel.eng_zap_challenge_kotlin.domain.utils.Constants.VIVA_REAL
+import com.farage.daniel.eng_zap_challenge_kotlin.domain.utils.Constants.ZAP
 import retrofit2.HttpException
 import retrofit2.Retrofit
 
@@ -15,22 +17,26 @@ class ApartmentsRepositoryImpl(
 ) : ApartmentsRepository {
 
     override suspend fun getAllApartmentsRemote(): List<ApartmentResponse> {
-        try {
-            return backendClient.getAllApartments()
+        return try {
+            backendClient.getAllApartments()
         } catch (e: HttpException) {
-            return emptyList()
+            emptyList()
         }
     }
 
     override suspend fun saveAllApartments(apartmentList: List<ApartmentEntity>): List<Long> {
-        return apartmentDatabase.apartmentDao().createAll(apartmentList)
+        return try {
+            apartmentDatabase.apartmentDao().createAll(apartmentList)
+        }catch (error:Exception) {
+            emptyList()
+        }
     }
 
     override fun retriveAllApartmentsForZap(): DataSource.Factory<Int, ApartmentEntity> {
-        return apartmentDatabase.apartmentDao().getAllApartmentPagedForZap()
+        return apartmentDatabase.apartmentDao().getAllApartmentPagedForZap(ZAP)
     }
 
     override fun retriveAllApartmentsForVivaReal(): DataSource.Factory<Int, ApartmentEntity> {
-        return apartmentDatabase.apartmentDao().getAllApartmentPagedForVivaReal()
+        return apartmentDatabase.apartmentDao().getAllApartmentPagedForVivaReal(VIVA_REAL)
     }
 }

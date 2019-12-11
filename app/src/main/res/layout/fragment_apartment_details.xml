@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_bottom_sheet"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="25dp">
 
     <ImageView
         android:id="@+id/closeImageButton"
@@ -17,8 +18,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_close_black" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/bannerViewPager"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:layout_marginTop="8dp"
@@ -27,13 +28,89 @@
         app:layout_constraintTop_toBottomOf="@+id/closeImageButton" />
 
     <TextView
-        android:id="@+id/valueTextView"
+        android:id="@+id/businessTypeTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerViewPager" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/priceTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/businessTypeTextView" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/locationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/monthyCondoTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/locationTextView" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/bedroomsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/monthyCondoTextView" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/bathroomsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bedroomsTextView" />
+
+    <TextView
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/parkingSpacesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintLeft_toLeftOf="@+id/businessTypeTextView"
+        app:layout_constraintRight_toRightOf="@+id/businessTypeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bathroomsTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

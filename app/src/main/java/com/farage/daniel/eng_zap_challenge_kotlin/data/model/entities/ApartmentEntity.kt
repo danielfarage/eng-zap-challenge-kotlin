@@ -9,6 +9,7 @@ data class ApartmentEntity(
 
     @PrimaryKey(autoGenerate = false)
     val id: String,
+    var enableFor: String,
     val usableAreas: Int,
     val listingType: String,
     val createdAt: String,
@@ -43,6 +44,7 @@ data class PricingInfos(
 
     val yearlyIptu: Int,
     val price: Int,
+    val rentalTotalPrice: Int,
     val businessType: String,
     val monthlyCondoFee: Int
 )

@@ -36,6 +36,7 @@ data class PricingInfos(
 
     @SerializedName("yearlyIptu") val yearlyIptu: Int,
     @SerializedName("price") val price: Int,
+    @SerializedName("rentalTotalPrice") val rentalTotalPrice: Int,
     @SerializedName("businessType") val businessType: String,
     @SerializedName("monthlyCondoFee") val monthlyCondoFee: Int
 )

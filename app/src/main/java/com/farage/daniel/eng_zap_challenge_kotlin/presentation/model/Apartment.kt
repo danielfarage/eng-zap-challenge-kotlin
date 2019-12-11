@@ -32,7 +32,8 @@ data class Location(
 data class PricingInfos(
 
     val yearlyIptu: Int,
-    val price: String,
+    val price: Int,
+    val rentalTotalPrice: Int,
     val businessType: String,
     val monthlyCondoFee: Int
 )
