@@ -1,9 +1,3 @@
-# eng-zap-challenge-kotlin
-Teste app kotlin para Grupo Zap
-
-Olá, infelizmente não tive muito tempo suficiente para efetuar o teste do jeito que eu gostaria, mas tentei seguir as boas práticas.
-Espero ainda poder bater um papo com vocês =]
-
 Antes de rodar o projeto, sugiro rodar a task Clean.
 
 # O Projeto
